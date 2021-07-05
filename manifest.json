@@ -1,0 +1,27 @@
+{
+    "manifest_version": 2,
+    "name": "Koi Header Harvester",
+    "version": "1.0.0",
+      "permissions": [
+        "tabs",
+        "webRequest",
+        "*://*.target.com/*",
+        "webRequestBlocking",
+        "cookies"
+      ],
+      "background": {
+        "scripts": ["index2.js"]
+      },
+      "content_scripts": [{
+        "js":["app.js"],
+        "matches":["*://*.target.com/*"]
+      }],
+      "browser_action": {
+        "default_icon": "icons/icon16.png"
+      },
+      "icons":{
+        "48": "icons/icon16.png"
+      },
+    "description": "Fetches Headers from Target",
+    "content_security_policy": "script-src 'self' https://unpkg.com ; object-src 'self'"
+  }
